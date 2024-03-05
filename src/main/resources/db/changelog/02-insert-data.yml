@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: demo_command
+      author: demo
+      context: DEV
+      changes:
+        - sqlFile:
+            dbms: "oracle h2"
+            encoding: "utf8"
+            endDelimiter: ;
+            path: db/changelong/sqlFiles/insert-data.sql
+            relativeToCHangelogFile: false
+            splitStatements: true
+            strinpComments: true

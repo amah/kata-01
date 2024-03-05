@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: demo_command
+      author: demo
+      context: DEV
+      changes:
+        - createTable:
+            tableName: T_COMMAND_C
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: PK_C_ID
+                  name: C_ID
+                  type: NUMBER
+              - column:
+                  name: C_COMMAND_ID
+                  type: VARCHAR2 (256 CHAR)
+              - column:
+                  name: C_COMMANBD_DATE
+                  type: DATE
+              - column:
+                  name: COMMAND_STATUS
+                  type: VARCHAR2 (256 CHAR)
+              - column:
+                  name: C_USER_NAME
+                  type: VARCHAR2 (256 CHAR)
+        - createTable:
+            tableName: T_COMMAND_ITEM_CI
+            columns:
+            - column:
+                constraints:
+                  nullable: false
+                  primaryKey: true
+                  primaryKeyName: PK_CI_ID
+                name: CI_ID
+                type: NUMBER
+            - column:
+                name: CI_PRODUCT_NAME
+                type: VARCHAR2 (256 CHAR)
+            - column:
+                name: CI_PRODUCT_TYPE
+                type: VARCHAR2 (256 CHAR)
+            - column:
+                name: CI_PRODUCT_UNIT_PRICE
+                type: NUMBER(14, 3)
+            - column:
+                name: CI_PRODUCT_QUANTITY
+                type: NUMBER(5)
+            - column:
+                name: CI_COMMAND_ID
+                type: VARCHAR2 (256 CHAR)
